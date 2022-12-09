@@ -1,3 +1,4 @@
+const { deleteOne } = require('../models/Todo');
 const Todo = require('../models/Todo');
 
 module.exports = {
@@ -17,6 +18,15 @@ module.exports = {
 			response.redirect('/todos');
 		} catch(error) {
 			console.log(error);	
+		}
+	}, 
+	deleteTodo: async (request, response) => {
+		try {
+			const deletedItem = await Todo.findOneAndDelete({ _id: request.body.todoIdFromJSFile});
+			console.log('Deleted Todo')
+            response.json('Deleted It')
+		} catch(error) {
+			console.log(error);
 		}
 	}
 }
