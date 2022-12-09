@@ -1,4 +1,3 @@
-const { deleteOne } = require('../models/Todo');
 const Todo = require('../models/Todo');
 
 module.exports = {
