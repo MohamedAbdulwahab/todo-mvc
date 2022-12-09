@@ -9,5 +9,14 @@ module.exports = {
 		} catch(error) {
 			console.log(error);
 		}
+	},
+	createTodo: async (request, response) => {
+		try {
+			const createTodo = await Todo.create({ todo:request.body.todoItem, completed: false });
+			console.log('todo has been added!');
+			response.redirect('/todos');
+		} catch(error) {
+			console.log(error);	
+		}
 	}
 }

@@ -4,5 +4,7 @@ const todosController = require('../controllers/todos');
 
 router.get('/', todosController.getTodos);
 
+router.post('/createTodo', todosController.createTodo);
+
 
 module.exports = router;
