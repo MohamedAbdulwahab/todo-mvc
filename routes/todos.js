@@ -8,4 +8,8 @@ router.post('/createTodo', todosController.createTodo);
 
 router.delete('/deleteTodo', todosController.deleteTodo);
 
+router.put('/markComplete', todosController.markComplete);
+
+router.put('/markIncomplete', todosController.markIncomplete);
+
 module.exports = router;
